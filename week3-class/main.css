@@ -1,0 +1,57 @@
+html{
+  margin: 22px 22px 22px 22px;
+  border: 11px 11px 11px 22px;
+  color: red;
+  background-color: white;
+}
+h1, span{
+  color: black;
+}
+
+div > ul > li{
+  color: black;
+}
+
+.gyumst1{
+  margin: 22px 22px 22px 22px;
+  border: solid gray;
+  padding: 40px 40px 40px 40px gray;
+  color:blue;
+}
+
+.main-bottom{
+  border:solid gray;
+  background-color: #f9f9f9;
+}
+.main-content{
+  border:solid gray;
+}
+.main-write{
+  border:solid gray;
+}
+.main-write-text{
+  border:;
+  height:90px;
+  width:70%
+  
+}
+.main-upper{
+  border:solid #3b5998;
+  background-color: #3b5998;
+  margin=1px;
+}
+.main-upper-logo{
+  border:100px 100px 100px 100px solid yellow;
+  background-color:;
+}
+.main-upper-button{
+  width:10%;
+  height:40px;
+  float:right;
+  border-radius:50%;
+}
+.main-upper-text{
+  width:85%;
+  height:30px;
+  float:;
+}
