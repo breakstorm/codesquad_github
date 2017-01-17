@@ -1,11 +1,11 @@
 html{
   margin: 22px 22px 22px 22px;
   border: 11px 11px 11px 22px;
-  color: red;
+  //color: red;
   background-color: white;
 }
 h1, span{
-  color: black;
+  color: red;
 }
 
 div > ul > li{
@@ -25,9 +25,13 @@ div > ul > li{
 }
 .main-content{
   border:solid gray;
+  clear:both;
 }
 .main-write{
   border:solid gray;
+}
+.main-wirte > div{
+  float:left;
 }
 .main-write-text{
   border:;
@@ -43,6 +47,7 @@ div > ul > li{
 .main-upper-logo{
   border:100px 100px 100px 100px solid yellow;
   background-color:;
+  color:red;
 }
 .main-upper-button{
   width:10%;

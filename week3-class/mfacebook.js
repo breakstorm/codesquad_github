@@ -33,9 +33,16 @@ mainTextarea.addEventListener("focusout",function(evt){
 });
 
 mainTextarea.addEventListener("keyup",function(evt){
-	var countBoard = mainTextarea.nextElementSibling.nextElementSibling;
-	currentCount++;
+	var countBoard = mainTextarea.nextElementSibling;
+	currentCount = mainTextarea.value.length;
 	//var tempWord = mainTextarea.value;
 	countBoard.innerText = currentCount + " / 80byte"
 	//mainTextarea.insertAdjacentHTML("afterend","<p>hello</p>");
+	if(currentCount >	 maxCount){
+		//alert("글자수가 초과 되었습니다.");
+		countBoard.style.color = "red";
+	}
+	else{
+		countBoard.style.color = "black";
+	}
 });
