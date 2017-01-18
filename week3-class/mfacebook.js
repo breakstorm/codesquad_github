@@ -10,9 +10,14 @@ mainTextarea.addEventListener("focus",function(evt){
 	if(mainArea.tagName !== "TEXTAREA") return false;
 	mainTextarea.setAttribute("style","background-color:gray");
 	//입력공간 옆에 있는 것을 숨기고
-	mainTextarea.nextElementSibling.style.visibility = "hidden";
-	mainTextarea.nextElementSibling.nextElementSibling.style.visibility = "hidden";
-	mainTextarea.nextElementSibling.nextElementSibling.nextElementSibling.style.visibility = "hidden";
+	var deleteButton = mainTextarea.nextElementSibling.nextElementSibling
+
+	deleteButton.previousElementSibling.style.display = "none";
+	deleteButton.style.display = "none";
+	deleteButton.nextElementSibling.style.display = "none";
+	// mainTextarea.nextElementSibling.style.visibility = "hidden";
+	// mainTextarea.nextElementSibling.nextElementSibling.style.visibility = "hidden";
+	// mainTextarea.nextElementSibling.nextElementSibling.nextElementSibling.style.visibility = "hidden";
 	//새로 만들 기능 화면에 표시
 	mainTextarea.insertAdjacentHTML("afterend","<button>hello</button>");
 	mainTextarea.insertAdjacentHTML("afterend","<p>0 / 80byte </p>");
@@ -20,6 +25,7 @@ mainTextarea.addEventListener("focus",function(evt){
 
 mainTextarea.addEventListener("focusout",function(evt){
 	var mainArea = evt.target;
+	var deleteButton = mainTextarea.nextElementSibling.nextElementSibling;
 	if(mainArea.tagName !== "TEXTAREA") return false;
 	mainTextarea.setAttribute("style","background-color:white");
 	//새로 만든 기능을 숨기고 / 삭제
@@ -27,14 +33,14 @@ mainTextarea.addEventListener("focusout",function(evt){
 	//입력한 글자값 삭제
 	mainTextarea.value = "";
 	//기존에 있던 버튼을 화면에 표
-	mainTextarea.nextElementSibling.style.visibility = "visible";
-	mainTextarea.nextElementSibling.nextElementSibling.style.visibility = "visible";
-	mainTextarea.nextElementSibling.nextElementSibling.nextElementSibling.style.visibility = "visible";
+	deleteButton.previousElementSibling.style.display = "block";
+	deleteButton.style.display = "block";
+	deleteButton.nextElementSibling.style.display = "block";
 });
 
 mainTextarea.addEventListener("keyup",function(evt){
 	var countBoard = mainTextarea.nextElementSibling;
-	currentCount = mainTextarea.value.length;
+	var currentCount = mainTextarea.value.length;
 	//var tempWord = mainTextarea.value;
 	countBoard.innerText = currentCount + " / 80byte"
 	//mainTextarea.insertAdjacentHTML("afterend","<p>hello</p>");
