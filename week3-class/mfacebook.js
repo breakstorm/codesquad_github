@@ -7,7 +7,15 @@ console.log(mainTextarea);
 
 //HTML속성값을 변경하는 함수가 필요
 //엘리먼트, 속성네임, 속성값
+//for in 
+ // console.log(e[i] = v);
 
+function setCSSAttribute(ele,attrbiuteObject){
+	for(i in attrbiuteObject){
+		ele.style[i] = attrbiuteObject[i];
+		console.log(i+ " : "+ attrbiuteObject[i]);
+	}
+}
 
 
 mainTextarea.addEventListener("focus",function(evt){
@@ -16,9 +24,9 @@ mainTextarea.addEventListener("focus",function(evt){
 	mainTextarea.setAttribute("style","background-color:gray");
 	//입력공간 옆에 있는 것을 숨기고
 	var deleteButton = mainTextarea.nextElementSibling.nextElementSibling
-	deleteButton.previousElementSibling.style.display = "none";
-	deleteButton.style.display = "none";
-	deleteButton.nextElementSibling.style.display = "none";
+	setCSSAttribute(deleteButton.previousElementSibling,{"display":"none"})
+	setCSSAttribute(deleteButton,{"display":"none"})
+	setCSSAttribute(deleteButton.nextElementSibling,{"display":"none"})
 	//새로 만들 능 화면에 표시
 	mainTextarea.insertAdjacentHTML("afterend","<button>취소</button>");
 	mainTextarea.insertAdjacentHTML("afterend","<a>0 / 80byte </a>");
@@ -38,7 +46,7 @@ mainTextarea.addEventListener("focusout",function(evt){
 	var deleteButton = mainTextarea.nextElementSibling.nextElementSibling;
 	console.log(deleteButton);
 	//deleteButton.previousElementSibling.setAttribute("style","display:block");
-	deleteButton.previousElementSibling.style.display = "";
+	deleteButton.previousElementSibling.style.display = "block";
 	deleteButton.style.display = "";
 	deleteButton.nextElementSibling.style.display = "";
 });
