@@ -1,17 +1,48 @@
+/*----------------header부분 시작--------------*/
 header{
 	text-align: center;
 }
+
+
+
+.userSection{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	//left: 50%;	
+	//position: relative;
+}
+
+
 ul, li{
 	text-align: center;
 	list-style-type: none;
 	float: left;
+	padding: 0px 0px 0px 0px;
 }
-span{
 
+
+span{
+	text-align: center;
 }
+
+
+
+
+/*-------------------nav부분 시작----------------*/
 nav{
 	clear: both;
+
 }
-.eleDisplayShow{
-	
+
+
+.tab{
+	float: left;
+	text-align: center;
+}
+
+/*-------------------section부분 시작----------------*/
+.my_position{
+	clear: both;
 }
