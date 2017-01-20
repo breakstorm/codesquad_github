@@ -1,0 +1,17 @@
+header{
+	text-align: center;
+}
+ul, li{
+	text-align: center;
+	list-style-type: none;
+	float: left;
+}
+span{
+
+}
+nav{
+	clear: both;
+}
+.eleDisplayShow{
+	
+}
