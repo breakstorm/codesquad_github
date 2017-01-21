@@ -52,25 +52,31 @@ nav{
 
 #position{
 	width: 200px;
+	height: 100px;
 	background: #f1f1f1;
 	border-right: solid;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 
 #friend{
 	width: 200px;
+	height: 100px;
 	background: #f1f1f1;
 	border-right: solid;
 }
 
 #theme{
 	width: 200px;
+	height: 100px;
 	background: #f1f1f1;
 	border-right: solid;
 }
 
 #news{
 	width: 200px;
+	height: 100px;
 	background: #f1f1f1;
 	border-right: solid;
 }
