@@ -12,6 +12,7 @@ var oReqNews = new XMLHttpRequest()
 
 oReqPosition.addEventListener("load",function(evt){
 	var tempElement = document.querySelector(".eleDisplayShow > ul > li")
+	if(tempElement.innerText) return false;
 	var tempXHRObj = evt.target.responseText;
 	var tempXHRText = JSON.parse(tempXHRObj);
 	var tempInsertString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
@@ -33,6 +34,7 @@ elePostion.addEventListener("click",function(evt){
 
 oReqFriend.addEventListener("load",function(evt){
 	var tempElement = document.querySelector("#my_friend > ul > li")
+	if(tempElement.innerText) return false;
 	var tempXHRObj = evt.target.responseText;
 	var tempXHRText = JSON.parse(tempXHRObj);
 	var tempInsertString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
@@ -54,6 +56,7 @@ eleFriend.addEventListener("click",function(evt){
 
 oReqTheme.addEventListener("load",function(evt){
 	var tempElement = document.querySelector("#my_theme > ul > li")
+	if(tempElement.innerText) return false;
 	var tempXHRObj = evt.target.responseText;
 	var tempXHRText = JSON.parse(tempXHRObj);
 	var tempInsertString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
@@ -74,6 +77,7 @@ eleTheme.addEventListener("click",function(evt){
 
 oReqNews.addEventListener("load",function(evt){
 	var tempElement = document.querySelector("#my_news > ul > li")
+	if(tempElement.innerText) return false;
 	var tempXHRObj = evt.target.responseText;
 	var tempXHRText = JSON.parse(tempXHRObj);
 	var tempInsertString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
