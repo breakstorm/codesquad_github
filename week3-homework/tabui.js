@@ -81,21 +81,25 @@ function removeTabContent(){
 	var tempElement2 = document.querySelector(".navFriend");
 	var tempElement3 = document.querySelector(".navTheme");
 	var tempElement4 = document.querySelector(".navNews");
+	length = tempElement1.children.length;
 	if(tempElement1.firstElementChild){
-		for(i=0; i<tempElement1.children.length; i++){
+		for(i=0; i<length; i++){
 		tempElement1.removeChild(tempElement1.firstElementChild);
 		}	
 	}
+	length = tempElement2.children.length;
 	if(tempElement2.firstElementChild){
 		for(i=0; i<tempElement2.children.length; i++){
 		tempElement2.removeChild(tempElement2.firstElementChild);
 		}	
 	}
+	length = tempElement3.children.length;
 	if(tempElement3.firstElementChild){
 		for(i=0; i<tempElement3.children.length; i++){
 		tempElement3.removeChild(tempElement3.firstElementChild);
 		}	
 	}
+	length = tempElement4.children.length;
 	if(tempElement4.firstElementChild){
 		for(i=0; i<tempElement4.children.length; i++){
 		tempElement4.removeChild(tempElement4.firstElementChild);
