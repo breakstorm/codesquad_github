@@ -1,0 +1,63 @@
+span{
+      color:blue;
+      font-size:50;
+    }
+
+button{
+  font-size:0.5em;
+}
+
+nav{
+  margin:20px 10px 0px 0px;
+}
+
+#head{
+  background-color:#4167b2;
+  width:400px; height:50px;
+}
+
+#headTA{
+  background-color:#29487e;
+  width:350px; height:20px;
+  margin:12px 5px 0px 20px;
+}
+
+#warningText{
+  color:red;
+  font-size:0.5em;
+  margin: 0px 0px 0px 165px;
+}
+
+#myTimeline{
+   width:400px; height:60px;
+   margin:10px 0px;
+   border: 1px solid white;
+   background-color:white;
+}
+
+#myImage, #otherImage {
+  margin:8px 0px 0px 8px;
+  float:left;
+}
+
+#myTA{
+  margin:13px 0px 13px 13px;
+  float:left;
+  color:gray;
+}
+
+#myTAnlc{
+  width:80px; height:26px;
+  margin:19px 0px 0px 300px
+}
+
+#otherNameDateCreated {
+  margin:13px 0px 0px 8px;
+  float:left;
+}
+
+#DateCreated {
+  font-size:0.7rem;
+  color:gray;
+}
+
