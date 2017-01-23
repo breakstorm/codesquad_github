@@ -35,31 +35,18 @@ function removeTabContent(){
 		tempElement4.removeChild(tempElement4.firstElementChild);
 		}	
 	}
-	// for(i=0; i<2; i++){
-	// 	tempElement1.removeChild(tempElement1.firstElementChild);
-	// 	tempElement2.removeChild(tempElement2.firstElementChild);
-	// 	tempElement3.removeChild(tempElement3.firstElementChild);
-	// 	tempElement4.removeChild(tempElement4.firstElementChild);
-	// }
 }
 
 oReqPosition.addEventListener("load",function(evt){
 	var tempElement = document.querySelector(".eleDisplayShow > ul > li")
 	if(tempElement.innerText) return false;
-	var tempXHRObj = evt.target.responseText;
-	var tempXHRText = JSON.parse(tempXHRObj);
+	var tempXHRText = JSON.parse(evt.target.responseText);
 	var tempInsertString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
 	tempElement.insertAdjacentHTML("beforeend",tempInsertString);
-	// for(i in tempResponseText){
-	// 	tempInsertString = '<div>'
-	// 	console.log(i + tempResponseText[i]);
-	// }
 });
 
 
 elePostion.addEventListener("click",function(evt){
-	var tempButton = evt.target;
-	//if(tempButton.tagName !== "BUTTON") return false;
 	removeTabContent();
 	oReqPosition.open("GET", "http://jsonplaceholder.typicode.com/posts/1");
 	oReqPosition.send();
@@ -69,20 +56,13 @@ elePostion.addEventListener("click",function(evt){
 oReqFriend.addEventListener("load",function(evt){
 	var tempElement = document.querySelector("#my_friend > ul > li")
 	if(tempElement.innerText) return false;
-	var tempXHRObj = evt.target.responseText;
-	var tempXHRText = JSON.parse(tempXHRObj);
+	var tempXHRText = JSON.parse(evt.target.responseText);
 	var tempInsertString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
 	tempElement.insertAdjacentHTML("beforeend",tempInsertString);
-	// for(i in tempResponseText){
-	// 	tempInsertString = '<div>'
-	// 	console.log(i + tempResponseText[i]);
-	// }
 });
 
 
 eleFriend.addEventListener("click",function(evt){
-	var tempButton = evt.target;
-	//if(tempButton.tagName !== "BUTTON") return false;
 	removeTabContent();
 	oReqFriend.open("GET", "http://jsonplaceholder.typicode.com/posts/2");
 	oReqFriend.send();
@@ -92,20 +72,13 @@ eleFriend.addEventListener("click",function(evt){
 oReqTheme.addEventListener("load",function(evt){
 	var tempElement = document.querySelector("#my_theme > ul > li")
 	if(tempElement.innerText) return false;
-	var tempXHRObj = evt.target.responseText;
-	var tempXHRText = JSON.parse(tempXHRObj);
+	var tempXHRText = JSON.parse(evt.target.responseText);
 	var tempInsertString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
 	tempElement.insertAdjacentHTML("beforeend",tempInsertString);
-	// for(i in tempResponseText){
-	// 	tempInsertString = '<div>'
-	// 	console.log(i + tempResponseText[i]);
-	// }
 });
 
 
 eleTheme.addEventListener("click",function(evt){
-	var tempButton = evt.target;
-	//if(tempButton.tagName !== "BUTTON") return false;
 	removeTabContent();
 	oReqTheme.open("GET", "http://jsonplaceholder.typicode.com/posts/3");
 	oReqTheme.send();
@@ -114,19 +87,12 @@ eleTheme.addEventListener("click",function(evt){
 oReqNews.addEventListener("load",function(evt){
 	var tempElement = document.querySelector("#my_news > ul > li")
 	if(tempElement.innerText) return false;
-	var tempXHRObj = evt.target.responseText;
-	var tempXHRText = JSON.parse(tempXHRObj);
+	var tempXHRText = JSON.parse(evt.target.responseText);
 	var tempInsertString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
 	tempElement.insertAdjacentHTML("beforeend",tempInsertString);
-	// for(i in tempResponseText){
-	// 	tempInsertString = '<div>'
-	// 	console.log(i + tempResponseText[i]);
-	// }
 });
 
 eleNews.addEventListener("click",function(evt){
-	var tempButton = evt.target;
-	//if(tempButton.tagName !== "BUTTON") return false;
 	removeTabContent();
 	oReqNews.open("GET", "http://jsonplaceholder.typicode.com/posts/4");
 	oReqNews.send();
