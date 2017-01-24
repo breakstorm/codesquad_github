@@ -1,3 +1,10 @@
+var listData = [
+	{"id":1, "name":"test1", "content":"fjdlaskfj", "like":99, "comment":"['댓글', '대댓글']"},
+	{"id":123, "name":"test2", "content":"fjdlaskfj", "like":3, "comment":"['댓글', '대댓글']"},
+	{"id":2323, "name":"test3", "content":"fjdlaskfj", "like":229, "comment":"['댓글', '대댓글']"},
+	{"id":55, "name":"test4", "content":"fjdlaskfj", "like":11, "comment":"['댓글',	 '대댓글']"}
+]
+
 // document.addEventListener("DOM")
 var eleTabTop = document.querySelector(".tabTop");
 var elePostion = document.querySelector("#position");
@@ -26,7 +33,8 @@ eleTabTop.addEventListener("click",function(evt){
 				// if(!(tempInsertStringPostion))
 				// 	var tempInsertStringPostion = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
 				// tempElement.insertAdjacentHTML("beforeend",tempInsertStringPostion);
-				insertString(tempElement, this.responseText);
+				//insertString(tempElement, this.responseText);
+				insertString2(tempElement, this.responseText);
 			});
 			oReq.open("GET", "http://jsonplaceholder.typicode.com/posts/1");
 			oReq.send();
@@ -35,9 +43,15 @@ eleTabTop.addEventListener("click",function(evt){
 			oReq.addEventListener("load",function(evt){
 				var tempElement = document.querySelector(".navFriend");
 				var tempXHRText = JSON.parse(evt.target.responseText);
-				if(!(tempInsertStringFriend))
-					var tempInsertStringFriend = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
-				tempElement.insertAdjacentHTML("beforeend",tempInsertStringFriend);
+				// if(!(tempInsertStringFriend))
+				// {
+				// 	// var tempInsertStringFriend = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
+				// 	var tempInsertStringFriend = "<div>{{title}}</div><div>{{body}}</div>";
+				// 	tempInsertStringFriend.replace('{{title}}',tempXHRText["title"]);
+				// 	tempInsertStringFriend.replace('{{body}}',tempXHRText["body"]);
+				// }
+				insertString(tempElement, this.responseText);
+				// tempElement.insertAdjacentHTML("beforeend",tempInsertStringFriend);
 			});
 			oReq.open("GET", "http://jsonplaceholder.typicode.com/posts/2");
 			oReq.send();
@@ -46,9 +60,10 @@ eleTabTop.addEventListener("click",function(evt){
 			oReq.addEventListener("load",function(evt){
 				var tempElement = document.querySelector(".navTheme");
 				var tempXHRText = JSON.parse(evt.target.responseText);
-				if(!(tempInsertStringTheme))
-					var tempInsertStringTheme = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
-				tempElement.insertAdjacentHTML("beforeend",tempInsertStringTheme);
+				// if(!(tempInsertStringTheme))
+				// 	var tempInsertStringTheme = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
+				// tempElement.insertAdjacentHTML("beforeend",tempInsertStringTheme);
+				insertString(tempElement, this.responseText);
 			})
 			oReq.open("GET", "http://jsonplaceholder.typicode.com/posts/3");
 			oReq.send();
@@ -57,9 +72,10 @@ eleTabTop.addEventListener("click",function(evt){
 			oReq.addEventListener("load",function(evt){
 				var tempElement = document.querySelector(".navNews");
 				var tempXHRText = JSON.parse(evt.target.responseText);
-				if(!(tempInsertStringNews))
-					var tempInsertStringNews = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
-				tempElement.insertAdjacentHTML("beforeend",tempInsertStringNews);
+				// if(!(tempInsertStringNews))
+				// 	var tempInsertStringNews = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
+				// tempElement.insertAdjacentHTML("beforeend",tempInsertStringNews);
+				insertString(tempElement, this.responseText);
 			})
 			oReq.open("GET", "http://jsonplaceholder.typicode.com/posts/4");
 			oReq.send();
@@ -69,12 +85,38 @@ eleTabTop.addEventListener("click",function(evt){
 });
 
 
+// function insertString(element, XHRText){
+// 	var tempXHRText = JSON.parse(XHRText);
+// 	var tempString = "<div>{{title}}</div><div>{{body}}</div>";
+// 	tempString = tempString.replace('{{title}}',tempXHRText["title"]);
+// 	tempString = tempString.replace('{{body}}',tempXHRText["body"]);
+
+// 	// var tempString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
+// 	element.insertAdjacentHTML("beforeend",tempString);
+// }
+
+
 function insertString(element, XHRText){
 	var tempXHRText = JSON.parse(XHRText);
-	var tempString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
+	var tempString = document.querySelector("#listTemplate").innerHTML;
+	tempString = tempString.replace('{{title}}',tempXHRText["title"])
+	.replace('{{body}}',tempXHRText["body"]);
+	// tempString = tempString.replace('{{body}}',tempXHRText["body"]);
+	// var tempString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
 	element.insertAdjacentHTML("beforeend",tempString);
 }
 
+function insertString2(element, XHRText){
+	var tempXHRText = listData;
+	var tempString = document.querySelector("#listData").innerHTML;
+	var tempString2 = '';
+	for(i in tempXHRText){
+	// tempString = tempString.replace('{{body}}',tempXHRText["body"]);
+	// var tempString = '<div>' + tempXHRText["title"] + '</div>' + '<div>' + tempXHRText["body"] + '</div>';
+	tempString2 = tempString.replace('{{id}}',tempXHRText[i]["id"]).replace('{{name}}',tempXHRText[i]["name"]).replace('{{content}}',tempXHRText[i]["content"]).replace('{{like}}',tempXHRText[i]["like"]).replace('{{comment}}',tempXHRText[i]["comment"]);
+	element.insertAdjacentHTML("beforeend",tempString2);
+	}
+}
 
 function removeTabContent(){
 	var tempElement1 = document.querySelector(".navPosition");
