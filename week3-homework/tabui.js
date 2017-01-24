@@ -14,6 +14,16 @@ var oReq = new XMLHttpRequest();
 
 // (글자를 추가하는 함수) (엘리먼트를 구분하는 값 필요)
 
+//*프로그램 도식화*//
+//클릭이벤트 활성화
+//(없음)색깔 지우기
+//(없음)색깔 변하기
+//(함수분리 완료)삭제 실행
+//ajax통신 실행
+//(함수분리 완료)글자 써넣기
+//
+
+
 eleTabTop.addEventListener("click",function(evt){
 	// if(evt.target.innerText == elePostion.innerText)
 	// 	console.log(evt.target.innerText);
