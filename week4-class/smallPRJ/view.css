@@ -47,6 +47,7 @@
 	position:absolute;
 	//transform:translate3d(0px,0px,0px);
 	transition : all 2s;
+	//transition : none;
 }
 .view{
 	//border:solid blue;
