@@ -10,9 +10,13 @@ function getCurrentX(){
 }
 
 function init(){
+	var movePoint = document.querySelector(".movePoint");
+	// var clone = movePoint.lastElementChild.cloneNode(true);
+	// movePoint.insertAdjacentElement("afterbegin",clone);
+	// movePoint.removeChild(movePoint.lastElementChild);
+	movePoint.lastElementChild.setAttribute("style","left:0px");
 	document.addEventListener("click",function(evt){
 		var positionView = getCurrentX();
-		var movePoint = document.querySelector(".movePoint");
 		switch(evt.target.className){
 			case "leftButton":
 				if(positionView < endPoint) return false;
@@ -21,9 +25,9 @@ function init(){
 					movePoint.setAttribute("style",moveString);
 				}
 				else{
-				positionView = positionView - oneSlide;
-				var moveString = "transform:translate3d(" + positionView + "px,0px,0px";
-				movePoint.setAttribute("style",moveString);
+					positionView = positionView - oneSlide;
+					var moveString = "transform:translate3d(" + positionView + "px,0px,0px";
+					movePoint.setAttribute("style",moveString);
 				}
 			break;
 			
@@ -57,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function(){
 //(완료)transform을 인라인으로 변경 -> 좌표값을 전역변수를 사용하지 않고서 구성
 //화면 좌표 동그라미 표시
 //무한롤링 구성
-// --1. 좌표를 1로 돌린다.
+// --1. (완료-master머지)좌표를 1로 돌린다.
 // --2. 배열에 위치값을 넣어둔다.
 // --3. 
 //커서속성 구성
+//드래그로 화면을 전환하는 기능.
