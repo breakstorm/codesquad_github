@@ -33,5 +33,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 //(완료)이벤트 델리게이션
 //(완료)이벤트 컨텐트로디드 시작지점 작성
-//CSS파일 파싱하기
+//(불가능)CSS파일 파싱하기
+
+//transform을 인라인으로 변경 -> 좌표값을 전역변수를 사용하지 않고서 구성
 //화면 좌표 동그라미 표시
+//무한롤링 구성
+//커서속성 구성
