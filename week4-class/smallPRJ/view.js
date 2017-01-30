@@ -1,5 +1,5 @@
 startPoint = 0;
-endPoint = -2400;
+endPoint = -3000;
 oneSlide = 600;
 
 function getCurrentX(){
@@ -19,15 +19,45 @@ function init(){
 		var positionView = getCurrentX();
 		switch(evt.target.className){
 			case "leftButton":
-				if(positionView < endPoint) return false;
+				// if(positionView < endPoint) return false;
 				if(positionView === endPoint){
-					var moveString = "transform:translate3d(" + startPoint + "px,0px,0px";
-					movePoint.setAttribute("style",moveString);
+				// 	// var moveString = "transform:translate3d(" + startPoint + "px,0px,0px";
+				// 	// movePoint.setAttribute("style",moveString);
+					positionView = 0;
+					var tempMove = document.querySelector(".view1")
+					tempMove.setAttribute("style","left:600px");
+					tempMove.nextElementSibling.setAttribute("style","left:1200px");
+					tempMove.nextElementSibling.nextElementSibling.setAttribute("style","left:1800px");
+					tempMove.nextElementSibling.nextElementSibling.nextElementSibling.setAttribute("style","left:2400px");
+					tempMove.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.setAttribute("style","left:3000px");
+					tempMove.parentElement.setAttribute("style","left:0px");
 				}
-				else{
-					positionView = positionView - oneSlide;
-					var moveString = "transform:translate3d(" + positionView + "px,0px,0px";
-					movePoint.setAttribute("style",moveString);
+				// else{
+				positionView = positionView - oneSlide;
+				var moveString = "transform:translate3d(" + positionView + "px,0px,0px";
+				movePoint.setAttribute("style",moveString);
+				switch(positionView){
+					case -600:
+						var tempMove = document.querySelector(".view5")
+						tempMove.setAttribute("style","left:3000px");
+						break;
+					case -1200:
+						var tempMove = document.querySelector(".view1")
+						tempMove.setAttribute("style","left:3600px");
+						break;
+					case -1800:
+						var tempMove = document.querySelector(".view2")
+						tempMove.setAttribute("style","left:4200px");
+						break;
+					case -2400:
+						var tempMove = document.querySelector(".view3")
+						tempMove.setAttribute("style","left:4800px");
+						break;
+					case -3000:
+						var tempMove = document.querySelector(".view4")
+						tempMove.setAttribute("style","left:5400px");
+						break;
+					// }
 				}
 			break;
 			
